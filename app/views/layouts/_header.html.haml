@@ -1,0 +1,82 @@
+%section.header
+  .hidden-xs.hidden-sm.large
+    .row
+      .col-xs-4.branding-col
+        = link_to root_path, class: 'logo' do
+          = image_tag 'header-icon-placeholder.png', class: 'icon', alt: "The LitCharts.com logo."
+          %span.text LitCharts
+        %span.tagline From the creators of SparkNotes, something better.
+      .col-xs-5.links-col
+        %span.visible-lg
+          = link_to '#', class: 'header-menu-option' do
+            .option-line How-to
+            .option-line Guides
+        = link_to '#', class: 'header-menu-option' do
+          .option-line Shakespeare
+          .option-line Translations
+        = link_to '#', class: 'header-menu-option' do
+          .option-line Literary
+          .option-line Terms
+        = link_to '#', class: 'header-menu-option' do
+          .option-line Literature
+          .option-line Guides
+      .col-xs-3.text-right.search-col
+        = link_to 'Sign In', '#', class: 'sign-up-in-link sign-in default-header'
+        = link_to 'Sign Up', '#', class: 'sign-up-in-link sign-up default-header'
+        = form_tag '', method: :get, class: 'search form' do
+          .input-group.search
+            %input.form-control{ name: "query", placeholder: "Search title, author, theme, and more...", type: "text", autocomplete: 'off' }
+            .input-group-addon.submit
+              %span.glyphicon.glyphicon-search
+  .visible-xs.visible-sm.small
+    .row.header.mobile-header
+      .col-xs-12
+        .controls.pull-right
+          = link_to '#', class: 'search pull-right' do
+            %span.fa-stack
+              %i.fa.fa-circle.fa-stack-2x
+              %i.fa.fa-search.fa-stack-1x
+          .links-col.pull-right.user-status
+            .hidden-sm
+              = link_to 'Sign In', '#'
+              = link_to 'Sign Up', '#'
+          .links-col.pull-right.visible-sm
+            = link_to '#', class: 'header-menu-option' do
+              .option-line Lit
+              .option-line Guides
+            = link_to '#', class: 'header-menu-option' do
+              .option-line Lit
+              .option-line Terms
+            = link_to '#', class: 'header-menu-option' do
+              .option-line Shakespeare
+              .option-line Translations
+
+        %table
+          %tr
+            %td
+              = link_to '#', class: 'logo' do
+                = image_tag 'header-icon-placeholder.png', class: 'icon', alt: 'The LitCharts.com logo.'
+                %span.text LitCharts
+            %td.hidden-xs.sm-signup-signin
+              = link_to 'Sign Up', '#'
+            %td.hidden-xs.sm-signup-signin
+              = link_to 'Sign In', '#'
+      .col-xs-12
+        = form_tag '', method: :get, class: 'search form' do
+          .input-group.search
+            %input.form-control{ name: "q", placeholder: "Search title, author, theme...", type: "text", autocomplete: 'off' }
+            .input-group-addon.submit
+              %span.glyphicon.glyphicon-search
+
+      .col-xs-12.visible-xs.xs-link-controls
+        %table
+          %tr
+            %td
+              = link_to '#', class: 'header-menu-option' do
+                Lit Guides
+            %td{ style: "width: 100%;" }
+              = link_to '#', class: 'header-menu-option' do
+                Lit Terms
+            %td
+              = link_to '#', class: 'header-menu-option' do
+                Shakespeare Translations

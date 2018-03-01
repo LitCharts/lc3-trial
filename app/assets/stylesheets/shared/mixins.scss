@@ -1,0 +1,162 @@
+///////////////////////////////////////////
+// litcharts mixins
+
+@mixin mobile-shifted-index-icon($component) {
+  // typically styling mobile first, using media queries for larger screens
+  // but! would just have to undo all these styles for larger screens in this case
+  @media(max-width: $screen-xs-max) {
+    .#{$component} .content {
+      position: relative;
+
+      .description-container {
+        margin-right: 80px;
+      }
+
+      .icon-container {
+        margin-top: 0;
+        padding: 0;
+        position: absolute;
+        right: -70px;
+        top: 40px;
+
+        .#{$component}-icon .icon {
+          height: 54px;
+          left: 10px;
+          top: 54px;
+          width: 54px;
+        }
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////
+// utility mixins
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+// https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+// https://nicksergeant.com/a-collection-of-scss-mixins-ive-curated-over-time/
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+}
+@mixin inset-box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+  -webkit-box-shadow: inset $horizontal $vertical $blur $color;
+  -moz-box-shadow: inset $horizontal $vertical $blur $color;
+  box-shadow: inset $horizontal $vertical $blur $color;
+}
+@mixin box-shadow-with-spread($horizontal: 0px, $vertical: 1px, $blur: 2px, $spread: 0px, $color: #CCC) {
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+// http://stackoverflow.com/questions/9314238/break-long-word-in-table-cell-with-percentage-widths
+@mixin break-word {
+  /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+@mixin transform($val) {
+  transform: $val;
+  -moz-transform: $val;
+  -webkit-transform: $val;
+}
+
+@mixin no-select() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+@mixin error-link {
+  a {
+    color: $error-color;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin payment-form-errors {
+  color: $error-color;
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  margin: 15px auto;
+  padding: 10px;
+
+  h2 {
+    color: $error-color;
+  }
+
+  ul {
+    margin: 0 auto;
+  }
+
+  @include error-link;
+}

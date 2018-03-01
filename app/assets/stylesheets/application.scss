@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+
+$font-size-base: 16px;
+$font-family-base: "SourceSansPro", 'Source Sans Pro', verdana, arial, helvetica, sans-serif; // "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-family-bold: "SourceSansPro-Bold", 'Source Sans Pro', verdana-bold, helvetica-bold, arial, sans-serif;
+$font-family-light: "SourceSansPro-Light", $font-family-base;
+$link-color: #49acf9;
+$link-hover-color: #0889ee;
+$text-color: #5a5a5a;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import 'shared/functions';
+@import 'shared/mixins';
+
+$black: #000000;
+$dark-gray: #5a5a5a;
+$medium-gray: #cccccc;
+$light-gray: #f9f9f9;
+$white: #ffffff;
+$error-color: #fe463a;
+$purple: #ac6ddb;
+$red: #ff6967;
+$lc-red: $red;
+$turquoise: #3fcec5;
+$yellow: #ffc965;
+$indigo: #1a285d;
+$green: #a2e2a4;
+
+$lc-bg-color-names: red yellow green blue purple medium-blue dark-blue;
+$lc-bg-colors: $red $yellow $green $turquoise $purple #1293f6 #1a285d;
+@for $i from 1 through length($lc-bg-color-names) {
+  $name: nth($lc-bg-color-names, $i);
+  $color: nth($lc-bg-colors, $i);
+  .lc-bg-#{$name} {
+    background: rgba($color, 0.5);
+  }
+}
+
+
+$btn-lc-bg-color: rgb(0, 167, 247);
+.btn-lc {
+  background: $btn-lc-bg-color;
+  color: #fff;
+  font-family: $font-family-bold;
+  font-size: 1.6rem;
+  font-weight: bold;
+
+  @media(min-width: $screen-md-min) {
+    font-size: 1.2em;
+  }
+
+  &.btn-blurred,
+  &.btn-blurred:hover {
+    background: $btn-lc-bg-color;
+    @include box-shadow-with-spread(0, 0, 2px, 2px, $btn-lc-bg-color);
+    color: rgba(255, 255, 255, 0);
+    cursor: default;
+    text-decoration: none;
+    text-shadow: 0 0 8px #fff;
+  }
+}
+.btn-lc:focus,
+.btn-lc:hover,
+.btn-lc:active {
+  background: darken($btn-lc-bg-color, 10%);
+  color: #fff;
+}
+$btn-lc-red-bg-color: $lc-red;
+.btn-lc-red {
+  @extend .btn-lc;
+  background: $btn-lc-red-bg-color;
+  font-weight: bold;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: darken($btn-lc-red-bg-color, 10%);
+  }
+}
+
+$dark-layout-color: rgb(18, 147, 246); // darker blue, not sure how to describe these
+$medium-layout-color: rgb(0, 167, 247); // medium blue
+$light-layout-color: rgb(231, 244, 255); // light blue
+$contrast-layout-color: $lc-red;
+$light-active-layout-color: $light-layout-color;
+$dark-active-layout-color: darken($light-layout-color, 7%);
+$light-text-color: lighten($text-color, 10%);
+
+//////////////////////////////////////////////
+
+@import "views/layouts/default";

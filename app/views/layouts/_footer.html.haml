@@ -1,0 +1,41 @@
+%section.footer
+  .container.links.hidden-xs.hidden-sm
+    .row
+      .col-xs-12.col-xs-offset-1
+        .row
+          .col-xs-3
+            .category Company
+            %a{ :href => '#' } About Us
+            %a{ :href => '#' } Our Story
+            %a{ :href => '#' } Subscription FAQ
+            %a{ :href => '#' } Jobs
+          .col-xs-3
+            .category Connect
+            %a{ :href => '#' } Contact & Help
+            %a{:href => '#'} Blog
+            %a{ :href => "https://www.facebook.com/litcharts", target: "_blank" } Facebook
+            %a{ :href => "https://twitter.com/intent/user?user_id=1244857338", target: "_blank" } Twitter
+          .col-xs-3
+            .category Mobile Apps
+            %a{:href => '#'} iOS
+            %a{:href => '#'} Android
+          .col-xs-3
+            .category Legal
+            %a{ :href => '#' } Privacy Policy
+            %a{ :href => '#' } Terms of Service
+
+  .container.visible-xs.visible-sm
+    .row
+      .col-xs-12.text-center
+        %a{ :href => '#' } Home
+        %a{ :href => '#' } About
+        %a{ :href => '#' } Story
+        %a{ :href => '#' } FAQ
+        %a{ :href => '#' } Contact
+  .text-center.copyright
+    Copyright © #{Date.current.year} All Rights Reserved
+  .text-center.jobs
+    #{ link_to 'LitCharts is hiring!', '#'}
+  .text-center.visible-xs.visible-sm
+    %a{ :href => '#' } Privacy
+    %a{ :href => '#' } Terms
