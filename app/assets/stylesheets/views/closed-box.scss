@@ -1,0 +1,11 @@
+$block: '.closed-box';
+
+#{$block}{
+  position: relative;
+  &__container{
+    &_blurred{
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+$block: '.btn';
+
+#{$block}{
+  &#{$block}{
+    &_action{
+      padding: 8px 22px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 400;
+      background: #ff6967;
+      color: $white;
+    }
+  }
+}
