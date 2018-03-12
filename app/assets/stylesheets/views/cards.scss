@@ -29,17 +29,24 @@ $block: '.card';
           align-items: center;
           justify-content: center;
           border-radius: 50%;
+          max-width: 100%;
            @media(max-width: 992px) {
              width: 100px;
              height: 100px;
            }
             @media(max-width: 768px) {
-             height: 145px;
+              max-height: 140px;
               width: 140px;
               margin-bottom: 20px;
            }
+           @media(max-width: 500px) {
+             height: 80px;
+           }
           img{
             width: 70%;
+             @media(max-width: 768px) {
+               max-width: 50%;
+             }
           }
           &.theme-1-color{
             background: #ff6967;
