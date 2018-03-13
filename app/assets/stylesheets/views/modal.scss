@@ -69,6 +69,26 @@ $block: '.modal';
          text-align: center;
          font-weight: 600;
        }
+       &.modal_access-small{
+         #{$block}{
+            &__content{
+              max-width: 98%;
+              top: 83px;
+              padding-top: 0;
+              padding-bottom: 20px;
+            }
+           &__image{
+             margin-bottom: 0;
+             width: 130px;
+           }
+           &__controls{
+             margin-bottom: 0;
+           }
+         }
+         .remark{
+           font-size: 18px;
+         }
+       }
      }
    }
 }

@@ -11,5 +11,16 @@ $block: '.btn';
       background: #ff6967;
       color: $white;
     }
+    &_close{
+      position: absolute;
+      background: transparent;
+      padding: 0;
+        top: 3px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transform: rotate(45deg);
+      color: #c8c8c8;
+    }
   }
 }
