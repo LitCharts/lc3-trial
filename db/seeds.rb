@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do |i|
+  Theme.create(
+    name: Faker::Lovecraft.unique.deity,
+    description: Faker::Lovecraft.paragraph(4) 
+  )
+end
