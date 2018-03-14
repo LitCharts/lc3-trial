@@ -1,0 +1,15 @@
+.card.card_theme.row
+  .col-sm-3.col-xs-3
+    = link_to '#', class: 'card__icon theme-1-color' do
+      = image_tag 'https://assets.litcharts.com/icons/frankenstein-ambition-and-fallibility.large.white.desktop.png', class: 'icon', alt: 'The LitCharts.com logo.'
+  .col-sm-9.col-xs-9
+    .card__title
+      = link_to theme.name, '#', class: 'link'
+      in
+      = link_to 'Frankenstein', '#', class: 'link'
+      by
+      = link_to 'Mary Shelly', '#', class: 'link'
+    %p.card__description
+      = theme.description
+    %span.ital
+      = link_to '(read full theme analysis)', '#', class: 'link'

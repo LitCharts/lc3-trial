@@ -1,0 +1,147 @@
+.related
+  .container
+    .row
+      .col-xs-12.col-sm-4.col-md-3.col-lg-3
+        .sidebar
+          .sidebar__header
+            .sidebar__title
+              Refine Your Search
+            .sidebar__image
+              = image_tag 'https://assets.litcharts.com/assets/sign-up/icons/A-plus-letter-emblem-998845222a2401b3e06baaf01b08575ddd08e9db9393531fb51c9fd12180e456.svg', class: 'a-plus-icon img-responsive', alt: "A plus letter emblem."
+          .modal.modal_access.modal_access-small 
+            -# .modal_open
+            .modal__content
+              %button.btn.btn_close
+                +
+              .modal__header
+                .modal__image
+                  = image_tag 'https://assets.litcharts.com/assets/logo-books-and-text-blue-a-plus-b6b70c7593564a0e3ccf2bb702af3d2fdeb9d10d16cf075897c01d21dc742884.svg', class: 'img-responsive', alt: 'Logo books and text blue a plus'
+              .modal__body
+                .remark
+                  Upgrade to <br>refine your search
+              .modal__footer
+                .modal__controls
+                  %button.btn.btn_action
+                    get LitCarts A+
+          .filter-box
+            %ul.list.list_checkbox
+              .header.lit-guides Book title (66)
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+            %span.ital
+              = link_to '(see more)', '#', class: 'link'
+          .filter-box
+            %ul.list.list_checkbox
+              .header.lit-guides Book title (66)
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+              %li.list__item
+                %label.subcategory
+                  %span.checkbox-wrapper
+                    %input{ type: "checkbox" }
+                    A Walk to Remember
+                    %span.count
+            %span.ital
+              = link_to '(see more)', '#', class: 'link'
+      .col-xs-12.col-sm-8.col-md-8.col-lg-8
+        .theme-box
+          .theme-box__header
+            .theme-box__title
+              Theme You Were Reading
+          .card.card_theme.row
+            .col-sm-3.col-xs-3
+              = link_to '#', class: 'card__icon theme-1-color' do
+                = image_tag 'https://assets.litcharts.com/icons/frankenstein-ambition-and-fallibility.large.white.desktop.png', class: 'icon', alt: 'The LitCharts.com logo.'
+            .col-sm-9.col-xs-9
+              .card__title
+                = link_to 'Ambition and Fallibility', '#', class: 'link'
+                in
+                = link_to 'Frankenstein', '#', class: 'link'
+                by
+                = link_to 'Mary Shelly', '#', class: 'link'
+              %p.card__description
+                Through Victor and Walton, Frankenstein portrays human beings as deeply ambitious, and yet also deeply flawed. Both Victor and Walton dream of transforming society and bringing glory to themselves through their scientific achievements. Yet their ambitions also make them fallible.
+              %span.ital
+                = link_to '(read full theme analysis)', '#', class: 'link'
+        .closed-box
+          .modal.modal_access.modal_open
+            .modal__content
+              .modal__header
+                .modal__image
+                  = image_tag 'https://assets.litcharts.com/assets/logo-books-and-text-blue-a-plus-b6b70c7593564a0e3ccf2bb702af3d2fdeb9d10d16cf075897c01d21dc742884.svg', class: 'img-responsive', alt: 'Logo books and text blue a plus'
+                .modal__title
+                  Get
+                  %strong compare and contrast
+                  superpower
+              .modal__body
+                .video-box
+                  Video???
+                .remark
+                  Unlock
+                  %strong Related Themes
+                  for "Ambition and Frankenstein" as well for every one of other 2,478 themes we cover.
+              .modal__footer
+                .modal__controls
+                  %button.btn.btn_action
+                    get LitCarts A+
+                .remark.remark_small
+                  Already a LitCharts A+ member?
+                  = link_to 'Sign in', '#', class: 'link'
+          .closed-box__container.closed-box__container_blurred
+            .theme-box
+              .theme-box__header
+                .theme-box__title
+                  Related Themes from Other Texts
+                .theme-box__subtitle
+                  Themes are ordered from most to least related.
+              = render @themes
