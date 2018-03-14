@@ -3,6 +3,7 @@ $block: '.card';
 #{$block}{
   &#{$block}{
     &_theme{
+      margin-bottom: 30px;
       #{$block}{
         &__title{
           margin-bottom: 20px;
