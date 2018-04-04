@@ -49,3 +49,5 @@ end
 gem 'haml-rails'
 # https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'faker'
