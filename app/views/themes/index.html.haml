@@ -1,0 +1,331 @@
+.book-component.layout
+  .book-header.sub-header{:style => "margin-bottom: 86px;"}
+    .container
+      .row
+        .col-xs-12
+          .display-table
+            .table-row
+              .table-cell
+                %h2.naked.book-title The Aeneid
+                %span.book-author.hidden-xs
+                  by
+                  %h3.naked.inline Virgil
+              .table-cell.upgrade-container.hidden-xs
+                %a.btn.btn-lc-red.upgrade{:href => "/sign-up?utm_source=upgrade_to_aplus_button"}
+                  Upgrade to A
+                  %sup +
+              .table-cell.visible-xs.small.controls.pull-right
+                %a.menu{:href => "#"}
+                  %span.fa-stack
+                    %i.fa.fa-bars.fa-stack-1x
+  #mobile-header-promo-placeholder{:style => "height: 0px; display: block;"}
+  #sticky-mobile-header-promo.fixed
+    .mobile-header-promo.visible-xs.pdf-promo
+      %a#mobile-header-pdf-promo.pdf-promo{"data-lc-event-extra-data" => "{\"book_slug\":\"the-aeneid\",\"user_signed_in\":false}", "data-promo-type" => "lit guide pdf", :href => "/sign-up?utm_source=mobile_header_promo"}
+      %table
+        %tbody
+          %tr
+            %td
+              %img.icon{:alt => "Pdf fan", :src => "https://assets.litcharts.com/assets/mobile-menu/pdf-fan-dd71f526917d6085d66d045bd94fb5b55d02a108dd45d836cbdd4abe2d4c043d.png"}/
+            %td Tap here to download this LitChart! (PDF)
+  .book-nav.hidden-xs.box-shadow.fixed
+    .container
+      .row
+        .col-xs-12
+          .components{"data-current" => "themes"}
+            .component.intro
+              %a{:href => "/lit/the-aeneid", :role => "button"} Introduction
+            .component.plot-summary
+              %a{:href => "/lit/the-aeneid/summary", :role => "button"} Plot Summary
+            .component.dropdown.summary-sections
+              %a.detailed.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "/lit/the-aeneid/book-1", :role => "button"}
+                %span.text
+                  %span.hidden-md Detailed
+                  Summary
+                  %br/
+                  \&amp; Analysis
+                %span.caret
+              %ul.dropdown-menu{"aria-labelledby" => ".book-nav .component .detailed"}
+                %li
+                  %a{:href => "/lit/the-aeneid/book-1"} Book 1
+                %li
+                  %a{:href => "/lit/the-aeneid/book-2"} Book 2
+                %li
+                  %a{:href => "/lit/the-aeneid/book-3"} Book 3
+                %li
+                  %a{:href => "/lit/the-aeneid/book-4"} Book 4
+                %li
+                  %a{:href => "/lit/the-aeneid/book-5"} Book 5
+                %li
+                  %a{:href => "/lit/the-aeneid/book-6"} Book 6
+                %li
+                  %a{:href => "/lit/the-aeneid/book-7"} Book 7
+                %li
+                  %a{:href => "/lit/the-aeneid/book-8"} Book 8
+                %li
+                  %a{:href => "/lit/the-aeneid/book-9"} Book 9
+                %li
+                  %a{:href => "/lit/the-aeneid/book-10"} Book 10
+                %li
+                  %a{:href => "/lit/the-aeneid/book-11"} Book 11
+                %li
+                  %a{:href => "/lit/the-aeneid/book-12"} Book 12
+            .component.dropdown.themes.current
+              %a.themes.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "/lit/the-aeneid/themes", :role => "button"}
+                %span.text Themes
+                %span.caret
+              %ul.dropdown-menu.themes{"aria-labelledby" => ".book-nav .component .themes"}
+                %li
+                  %a{:href => "/lit/the-aeneid/themes"} All Themes
+                %li
+                  %a{:href => "/lit/the-aeneid/themes/fate"}
+                    .book-component-icon.theme-icon.small{"data-code-index" => "0"}
+                      %i.fa.fa-circle.theme-0-color.circle
+                      %img.icon{:alt => "Fate Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-fate.small.white.desktop.png"}/
+                    Fate
+                %li
+                  %a{:href => "/lit/the-aeneid/themes/the-gods-and-divine-intervention"}
+                    .book-component-icon.theme-icon.small{"data-code-index" => "1"}
+                      %i.fa.fa-circle.theme-1-color.circle
+                      %img.icon{:alt => "The Gods and Divine Intervention Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-the-gods-and-divine-intervention.small.white.desktop.png"}/
+                    The Gods and Divine Intervention
+                %li
+                  %a{:href => "/lit/the-aeneid/themes/piety"}
+                    .book-component-icon.theme-icon.small{"data-code-index" => "2"}
+                      %i.fa.fa-circle.theme-2-color.circle
+                      %img.icon{:alt => "Piety Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-piety.small.white.desktop.png"}/
+                    Piety
+                %li
+                  %a{:href => "/lit/the-aeneid/themes/rome"}
+                    .book-component-icon.theme-icon.small{"data-code-index" => "3"}
+                      %i.fa.fa-circle.theme-3-color.circle
+                      %img.icon{:alt => "Rome Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-rome.small.white.desktop.png"}/
+                    Rome
+                %li
+                  %a{:href => "/lit/the-aeneid/themes/war-and-peace"}
+                    .book-component-icon.theme-icon.small{"data-code-index" => "4"}
+                      %i.fa.fa-circle.theme-4-color.circle
+                      %img.icon{:alt => "War and Peace Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-war-and-peace.small.white.desktop.png"}/
+                    War and Peace
+            .component.quotes
+              %a{:href => "/lit/the-aeneid/quotes", :role => "button"} Quotes
+            .component.dropdown.characters
+              %a.characters.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "/lit/the-aeneid/characters", :role => "button"}
+                %span.text Characters
+                %span.caret
+              %ul.dropdown-menu{"aria-labelledby" => ".book-nav .component .characters"}
+                %li
+                  %a{:href => "/lit/the-aeneid/characters"} All Characters
+                %li
+                  %a{:href => "/lit/the-aeneid/characters/aeneas"} Aeneas
+                %li
+                  %a{:href => "/lit/the-aeneid/characters/juno"} Juno
+                %li
+                  %a{:href => "/lit/the-aeneid/characters/turnus"} Turnus
+                %li
+                  %a{:href => "/lit/the-aeneid/characters/dido"} Dido
+                %li
+                  %a{:href => "/lit/the-aeneid/characters/virgil"} Virgil
+            .component.dropdown.simbols
+              %a.symbols.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-target" => "#", "data-toggle" => "dropdown", :href => "/lit/the-aeneid/symbols", :role => "button"}
+                %span.text Symbols
+                %span.caret
+              %ul.dropdown-menu.simbols{"aria-labelledby" => ".book-nav .component .symbols"}
+                %li
+                  %a{:href => "/lit/the-aeneid/symbols"} All Symbols
+                %li
+                  %a{:href => "/lit/the-aeneid/symbols/the-household-gods"}
+                    .book-component-icon.simbol-icon.small
+                      %i.fa.fa-circle.circle
+                      %img.icon{:alt => "The Household Gods Symbol Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-the-household-gods.small.white.desktop.png"}/
+                    The Household Gods
+                %li
+                  %a{:href => "/lit/the-aeneid/symbols/the-golden-bough"}
+                    .book-component-icon.simbol-icon.small
+                      %i.fa.fa-circle.circle
+                      %img.icon{:alt => "The Golden Bough Symbol Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-the-golden-bough.small.white.desktop.png"}/
+                    The Golden Bough
+                %li
+                  %a{:href => "/lit/the-aeneid/symbols/aeneas-s-shield"}
+                    .book-component-icon.simbol-icon.small
+                      %i.fa.fa-circle.circle
+                      %img.icon{:alt => "Aeneas's Shield Symbol Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-aeneas-s-shield.small.white.desktop.png"}/
+                    Aeneas's Shield
+                %li
+                  %a{:href => "/lit/the-aeneid/symbols/the-gates-of-war"}
+                    .book-component-icon.simbol-icon.small
+                      %i.fa.fa-circle.circle
+                      %img.icon{:alt => "The Gates of War Symbol Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-the-gates-of-war.small.white.desktop.png"}/
+                    The Gates of War
+            .component.chartboard
+              %a{:href => "/lit/the-aeneid/chart-board-visualization", :role => "button"} Theme Wheel
+  .component-content
+    .header
+      .container
+        %table.header-table
+          %tbody
+            %tr
+              %td.title-col
+                %h1.naked
+                  %span.component-title
+                    The Aeneid Themes
+    .content
+      .container
+        .row
+          .col-xs-12.col-sm-9.col-md-8.col-md-offset-1
+            .view
+              .themes-and-colors.explanation.header-banner
+                .row.text-center
+                  %div{"col-md-10" => "", "col-md-offset-1" => "", "col-xs-12" => ""}
+                    .header
+                      .text ##Related Themes from other texts
+                .row.subheader
+              .themes.index-list
+                #fate.theme.index-list-item
+                  .row
+                    .col-xs-12
+                      %h2.naked.title.index-list-item-title
+                        %a.theme-0-color{:href => "/lit/the-aeneid/themes/fate"} Fate
+                  .row.content
+                    .col-sm-4.icon-container.text-center
+                      %a{:href => "/lit/the-aeneid/themes/fate"}
+                        .book-component-icon.theme-icon.large{"data-code-index" => "0"}
+                          %i.fa.fa-circle.theme-0-color.circle
+                          %img.icon{:alt => "Fate Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-fate.large.white.desktop.png"}/
+                    .col-sm-8.description-container
+                      .description.readable.no-inline-characters.no-inline-symbols.no-inline-terms
+                        %p.theme-text1
+                          In the
+                          = succeed "," do
+                            %span.ital Aeneid
+                          = succeed "'s" do
+                            %span.inline-character Aeneas
+                          %span.inline-character Juno
+                          can delay Aeneas reaching Latium for a while, but not forever.
+                          %span.inline-character Dido
+                          can get Aeneas to stay in Carthage for a while, but…
+                        %em
+                          %a{:href => "/lit/the-aeneid/themes/fate"} (read full theme analysis)
+                #the-gods-and-divine-intervention.theme.index-list-item
+                  .row
+                    .col-xs-12
+                      %h2.naked.title.index-list-item-title
+                        %a.theme-1-color{:href => "/lit/the-aeneid/themes/the-gods-and-divine-intervention"} The Gods and Divine Intervention
+                  .row.content
+                    .col-sm-4.icon-container.text-center
+                      %a{:href => "/lit/the-aeneid/themes/the-gods-and-divine-intervention"}
+                        .book-component-icon.theme-icon.large{"data-code-index" => "1"}
+                          %i.fa.fa-circle.theme-1-color.circle
+                          %img.icon{:alt => "The Gods and Divine Intervention Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-the-gods-and-divine-intervention.large.white.desktop.png"}/
+                    .col-sm-8.description-container
+                      .description.readable.no-inline-characters.no-inline-symbols.no-inline-terms
+                        %p.theme-text2
+                          The gods actively intervene in the lives of the mortals, often using the characters like chess pieces to carry out their own power struggles.
+                          %span.inline-character Juno
+                          hates the Trojans and does her best to stop
+                          %span.inline-character Aeneas
+                          from fulfilling his destiny, even setting up the war that fills the second half of the poem.
+                          %span.inline-character Venus
+                          tries to protect and help her son.
+                          %span.inline-character Neptune
+                          just gets annoyed that some other god thinks he can mess with the ocean…
+                        %em
+                          %a{:href => "/lit/the-aeneid/themes/the-gods-and-divine-intervention"} (read full theme analysis)
+                #piety.index-list-item.null-bottom.theme
+                  .row
+                    .col-xs-12
+                      %h2.naked.title.index-list-item-title
+                        %a.theme-2-color{:href => "/lit/the-aeneid/themes/piety"} Piety
+                  .row.content
+                    .col-sm-4.icon-container.text-center
+                      %a{:href => "/lit/the-aeneid/themes/piety"}
+                        .book-component-icon.theme-icon.large{"data-code-index" => "2"}
+                          %i.fa.fa-circle.theme-2-color.circle
+                          %img.icon{:alt => "Piety Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-piety.large.white.desktop.png"}/
+                    .col-sm-8.description-container
+                      .description.readable.no-inline-characters.no-inline-symbols.no-inline-terms
+                        %p.theme-text3
+                          Pietas is a Latin word that can be translated as piety or devotion, and refers to someone's dutiful acceptance of the obligations placed on them by fate, by the will of the gods, and by the bonds of family and community. From the first lines of the poem,
+                          %span.inline-character Virgil
+                          describes
+                          %span.inline-character Aeneas
+                          as being remarkable for his piety, and "pious" is the most-used adjective to describe Aeneas throughout the poem. Aeneas always places these obligations above…
+                        %em
+                          %a{:href => "/lit/the-aeneid/themes/piety"} (read full theme analysis)
+                #rome.theme.index-list-item
+                  .row
+                    .col-xs-12
+                      %h2.naked.title.index-list-item-title
+                        %a.theme-3-color{:href => "/lit/the-aeneid/themes/rome"} Rome
+                  .row.content
+                    .col-sm-4.icon-container.text-center
+                      %a{:href => "/lit/the-aeneid/themes/rome"}
+                        .book-component-icon.theme-icon.large{"data-code-index" => "3"}
+                          %i.fa.fa-circle.theme-3-color.circle
+                          %img.icon{:alt => "Rome Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-rome.large.white.desktop.png"}/
+                    .col-sm-8.description-container
+                      .description.readable.no-inline-characters.no-inline-symbols.no-inline-terms
+                        %p.theme-text4
+                          Rome stands at the center of the poem. The city's founding, and the empire that will grow from it, is the endpoint of
+                          = succeed "'s" do
+                            %span.inline-character Aeneas
+                          = succeed "'s" do
+                            %span.inline-character Anchises
+                        %em
+                          %a{:href => "/lit/the-aeneid/themes/rome"} (read full theme analysis)
+                #war-and-peace.theme.index-list-item
+                  .row
+                    .col-xs-12
+                      %h2.naked.title.index-list-item-title
+                        %a.theme-4-color{:href => "/lit/the-aeneid/themes/war-and-peace"} War and Peace
+                  .row.content
+                    .col-sm-4.icon-container.text-center
+                      %a{:href => "/lit/the-aeneid/themes/war-and-peace"}
+                        .book-component-icon.theme-icon.large{"data-code-index" => "4"}
+                          %i.fa.fa-circle.theme-4-color.circle
+                          %img.icon{:alt => "War and Peace Theme Icon", :onerror => "this.style.visibility=\"hidden\";", :src => "https://assets.litcharts.com/icons/the-aeneid-war-and-peace.large.white.desktop.png"}/
+                    .col-sm-8.description-container
+                      .description.readable.no-inline-characters.no-inline-symbols.no-inline-terms
+                        %p.theme-text5
+                          War is everywhere in the
+                          = succeed "." do
+                            %span.ital Aeneid
+                          = succeed "'s" do
+                            %span.inline-character Aeneas
+                        %em
+                          %a{:href => "/lit/the-aeneid/themes/war-and-peace"} (read full theme analysis)
+            .clearfix
+  #inline-popup-modal.lc-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-sm{:role => "document"}
+      .modal-content
+        .modal-header
+          %h4.modal-title
+            %span.text
+        .modal-body
+        .modal-footer
+          %button.btn.btn-lc{"data-dismiss" => "modal"} Close
+  #audiobooks-test-modal.lc-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %h4.modal-title LitCharts Audio: Coming Soon (Maybe)
+        .modal-body
+          %p.text-center.headline Thanks for checking this out!
+          %p We're doing some research to figure out whether we should create audio versions of our literature guides—your click is like a vote that we should.
+          %p If you'd like us to notify you when we launch audio versions (if we do), please enter your email below and we'll let you know when they're ready!
+          %form#audiobooks-test-notification-form.form-inline{"accept-charset" => "UTF-8", :action => "/feature_interest_contacts", :method => "post"}
+            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+            %input{:name => "authenticity_token", :type => "hidden", :value => "822r09XWaV3aNeyJOYNueXfZyKGdElfRbLSXx2MhAD8/c7DjZ4nNn/Yc/KyM1f9w9FI4KnxQld1Zt+sq+er6Yg=="}/
+            .error
+            .form-group
+              %input#audiobooks-test-notification-email.form-control.email/
+            %input.btn.btn-lc.submit{:name => "commit", :type => "submit", :value => "Submit"}/
+          %p.disclaimer
+            By submitting this form you agree to our
+            %a{:href => "/terms"} Terms of Service
+            and
+            = succeed "." do
+              %a{:href => "/privacy"} Privacy Policy
+          %p.thanks Thanks! We'll keep you posted!
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
