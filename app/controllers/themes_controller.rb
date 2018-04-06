@@ -1,5 +1,8 @@
 class ThemesController < ApplicationController
   def index
-    @themes = Theme.all
+    @current_theme = Theme.first
+    @themes = Theme.where.not(id: @current_theme.id)
+    @authors = Author.all
+    @books = Book.all
   end
 end
