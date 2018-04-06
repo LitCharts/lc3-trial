@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-5.times do |i|
-  Theme.create(title: Faker::Book.title, description: Faker::Lorem.words(10))
+10.times do |i|
+  author = Author.create(name: Faker::Book.author)
+  book = Book.create(title: Faker::Book.title, author: author)
+  Theme.create(title: Faker::Book.title, description: Faker::Lorem.paragraphs(1)[0], book: book)
 end
