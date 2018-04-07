@@ -56,7 +56,33 @@
     %div
       %h3 ##Related Themes From Other Texts
       %p Themes are ordered from most to least related.
-    .col-lg-9
+    %div.card
+      %img.img-responsive.inline-block{:alt => "Litcharts Icon", :src => "/assets/logo-books-and-text-blue-a-plus.svg"}
+      %h4.text-center
+        Get
+        %strong compare and contrast
+        superpowers
+      %div.video.text-center
+        <a href="" target="_blank">video</a>
+      %p.text-center
+        Unlock Related Themes for
+        %strong #{@current_theme.title}
+        as well as for every one of the other 2,3478 themes we cover.
+        %br
+        %button.btn.btn-danger
+          Get LitCharts A
+          %sup +
+      %p.text-center
+        Already a LitCharts A
+        %sup +
+        member? <a href="" target="_blank">Sign in!</a>
+
+
+    %svg.blur-svg{:version => "1.1", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+    %defs
+      %filter#blur-filter
+        %fegaussianblur{:stddeviation => "3"}
+    .col-lg-9.blur
       -#TODO: put in actual png and fontawesome circle layered, this is just placeholder image
       - @themes.each do |theme|
         .col-xl-2.col-lg-2.col-md-2.col-sm-2.col-xs-2
