@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-xs-12
+      %h1 Lit Guide: #{@lit_guide.title}
+      %p= link_to 'Back to all Lit Guides', lit_guides_path
+  .row
+    .col-xs-12.col-sm-8
+      #text
+        = @lit_guide.text.html_safe
+    .col-xs-12.col-sm-4
+      Right column - highlights/notes go here!

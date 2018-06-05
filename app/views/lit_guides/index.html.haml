@@ -1,0 +1,7 @@
+.container
+  .row
+    .col-xs-12
+      %h1 Lit Guides
+      %ul
+        - @lit_guides.each do |lit_guide|
+          %li= link_to lit_guide.title, lit_guide_path(lit_guide)
