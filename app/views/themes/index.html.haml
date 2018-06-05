@@ -1,0 +1,102 @@
+.container
+  .row
+    .hidden-xs.hidden-sm.col-lg-3
+      %h5
+        Refine Your Search By...
+        %img.a-plus-icon{:alt => "A plus letter emblem", :src => "https://assets.litcharts.com/assets/sign-up/icons/A-plus-letter-emblem-998845222a2401b3e06baaf01b08575ddd08e9db9393531fb51c9fd12180e456.svg"}/
+    %div
+      %h3 Theme You Were Reading
+  .row
+    .hidden-xs.hidden-sm.col-lg-3
+      %ul.list-unstyled
+        %li.bg-primary Book Title (#{@books.size})
+        - @books.each do |book|
+          %li
+            %input{"aria-label" => "checkbox", :type => "checkbox"}/
+            #{book.title}
+        %li
+          %a{:href => "", :target => "_blank"} (see more)
+    / <div class="container">
+    .col-lg-9
+      -#TODO: put in actual png and fontawesome circle layered, this is just placeholder image
+      .col-xl-2.col-lg-2.col-md-2.col-sm-2.col-xs-2
+        %img.img-responsive.inline-block{:alt => "Fate Theme Icon", :src => "/assets/icons/theme_icons/ambition.png"}/
+      -#TODO: span classes have primary for blue coloring since links to theme are not known at this time
+      .description.col-xl-8.col-lg-8.col-md-8.col-sm-8.col-xs-8
+        %h4
+          %span.theme-name.text-primary #{@current_theme.title}
+          in
+          %span.book-title.text-primary #{@current_theme.book.title}
+          by
+          %span.book-author.text-primary #{@current_theme.book.author.name}
+        %p.theme-text1 #{@current_theme.description}
+        %em
+          %a{:href => ""} (read full theme analysis)
+        %hr/
+  /
+    <div class="row">
+    <div class="hidden-xs hidden-sm col-lg-3">
+    <h5>Refine Your Search By...<img class="a-plus-icon inline-block" src="https://assets.litcharts.com/assets/sign-up/icons/A-plus-letter-emblem-998845222a2401b3e06baaf01b08575ddd08e9db9393531fb51c9fd12180e456.svg" alt="A plus letter emblem"></h5>
+    </div>
+    <div>
+    <h3>Theme You Were Reading</h3>
+    </div>
+    </div>
+  .row
+    .hidden-xs.hidden-sm.col-lg-3
+      %ul.list-unstyled
+        %li.bg-primary Authors (#{@authors.size})
+        - @authors.each do |author|
+          %li
+            %input{"aria-label" => "checkbox", :type => "checkbox"}/
+            #{author.name}
+        %li
+          %a{:href => "", :target => "_blank"} (see more)
+    / <div class="container">
+    %div
+      %h3 ##Related Themes From Other Texts
+      %p Themes are ordered from most to least related.
+    %div.card
+      %img.img-responsive.inline-block{:alt => "Litcharts Icon", :src => "/assets/logo-books-and-text-blue-a-plus.svg"}
+      %h4.text-center
+        Get
+        %strong compare and contrast
+        superpowers
+      %div.video.text-center
+        <a href="" target="_blank">video</a>
+      %p.text-center
+        Unlock Related Themes for
+        %strong #{@current_theme.title}
+        as well as for every one of the other 2,3478 themes we cover.
+        %br
+        %button.btn.btn-danger
+          Get LitCharts A
+          %sup +
+      %p.text-center
+        Already a LitCharts A
+        %sup +
+        member? <a href="" target="_blank">Sign in!</a>
+
+
+    %svg.blur-svg{:version => "1.1", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+    %defs
+      %filter#blur-filter
+        %fegaussianblur{:stddeviation => "3"}
+    .col-lg-9.blur
+      -#TODO: put in actual png and fontawesome circle layered, this is just placeholder image
+      - @themes.each do |theme|
+        .col-xl-2.col-lg-2.col-md-2.col-sm-2.col-xs-2
+          %img.img-responsive.inline-block{:alt => "Revenge Theme Icon", :src => "/assets/icons/theme_icons/revenge.png"}/
+        -#TODO: span classes have primary for blue coloring since links to theme are not known at this time
+        .description.col-xl-10.col-lg-10.col-md-10.col-sm-10.col-xs-10
+          %h4
+            %span.theme-name.text-primary #{theme.title}
+            in
+            %span.book-title.text-primary #{theme.book.title}
+            by
+            %span.book-author.text-primary #{theme.book.author.name}
+          %p.theme-text1 #{theme.description}
+          %em
+            %a{:href => ""} (read full theme analysis)
+          %br
+          %br
