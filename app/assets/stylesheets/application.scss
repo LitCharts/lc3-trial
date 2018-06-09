@@ -21,6 +21,9 @@ $text-color: #5a5a5a;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "toastr";
+
+@import 'customizations/toastr';
 
 @import 'shared/functions';
 @import 'shared/mixins';
@@ -102,3 +105,4 @@ $light-text-color: lighten($text-color, 10%);
 //////////////////////////////////////////////
 
 @import "views/layouts/default";
+@import "views/highlights";

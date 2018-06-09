@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-xs-12
+      %h1 Notes and Highlights
+      %p= link_to 'Back', :back
+
+.container.highlights-container
+  .row
+    .col-xs-12
+      - @highlights.each do |highlight|
+        = render highlight
+  .row
+    .col-xs-12
+      = paginate @highlights

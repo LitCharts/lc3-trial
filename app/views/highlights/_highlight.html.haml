@@ -1,0 +1,14 @@
+- modal_id =  "highlight-modal-#{highlight.id}"
+= render partial: 'highlights/modal_form', locals: { highlight: highlight, id: modal_id }
+
+.highlight-item{ id: "#{modal_id}-item" }
+  .highlight-buttons
+    = link_to '', [highlight.lit_guide, highlight], class: 'remove-btn pull-right glyphicon glyphicon-remove', method: :delete, data: { remote: true, type: :json, confirm: 'Are you sure?' }
+    = link_to '', '#', class: 'pull-right glyphicon glyphicon-pencil', data: { toggle: 'modal', target: "##{modal_id}" }
+  .highlight-body
+    %blockquote
+      %p.small= highlight.quote
+    %p
+      %span.small= highlight.note
+
+  %hr

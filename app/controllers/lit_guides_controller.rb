@@ -5,5 +5,6 @@ class LitGuidesController < ApplicationController
 
   def show
     @lit_guide = LitGuide.find(params[:id])
+    @highlight = Highlight.new
   end
 end

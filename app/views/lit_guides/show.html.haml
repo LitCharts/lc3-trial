@@ -7,5 +7,19 @@
     .col-xs-12.col-sm-8
       #text
         = @lit_guide.text.html_safe
-    .col-xs-12.col-sm-4
-      Right column - highlights/notes go here!
+    .col-xs-12.col-sm-4.highlights-column
+      = render partial: 'highlights/modal_form', locals: { id: 'new-highlight', highlight: @highlight }
+
+      %h4
+        Notes and Highlights
+        %span.small
+          (
+          = link_to 'Manage all', my_highlights_path
+          )
+      %hr
+
+      - if @lit_guide.highlights.any?
+        - @lit_guide.highlights.each do |highlight|
+          = render highlight
+      - else
+        %p.small.highlights-empty-message No highlights have been added yet. Make a selection in the guide to add a new highlight.
