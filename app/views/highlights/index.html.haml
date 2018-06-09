@@ -2,14 +2,16 @@
   .row
     .col-xs-12
       %h1 Notes and Highlights
-      %p= link_to 'Back', :back
 
 .container.highlights-container
   .row
     .col-xs-12
-      - @highlights.each do |highlight|
-        = link_to "Lit Guide: #{highlight.lit_guide.title}", highlight.lit_guide
-        = render highlight
+      - if @highlights.any?
+        - @highlights.each do |highlight|
+          = link_to "Lit Guide: #{highlight.lit_guide.title}", highlight.lit_guide
+          = render highlight
+      - else
+        %p.small.highlights-empty-message No highlights have been added yet.
   .row
     .col-xs-12
       = paginate @highlights
