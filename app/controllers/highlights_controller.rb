@@ -3,7 +3,7 @@ class HighlightsController < ApplicationController
   before_action :set_highlight, except: [:index, :new, :create]
 
   def index
-    @highlights = Highlight.order(:start_position).page(params[:page] || 1).per(params[:per] || 10)
+    @highlights = Highlight.includes(:lit_guide).page(params[:page] || 1).per(params[:per] || 10)
   end
 
   def create

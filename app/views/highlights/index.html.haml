@@ -8,6 +8,7 @@
   .row
     .col-xs-12
       - @highlights.each do |highlight|
+        = link_to "Lit Guide: #{highlight.lit_guide.title}", highlight.lit_guide
         = render highlight
   .row
     .col-xs-12
