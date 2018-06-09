@@ -11,25 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605161107) do
+ActiveRecord::Schema.define(version: 20180607025519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authors", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "highlights", force: :cascade do |t|
+    t.integer  "lit_guide_id",   null: false
+    t.text     "note"
+    t.text     "quote",          null: false
+    t.integer  "start_position"
+    t.integer  "end_position"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  create_table "books", force: :cascade do |t|
-    t.integer  "author_id",  null: false
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
+  add_index "highlights", ["lit_guide_id"], name: "index_highlights_on_lit_guide_id", using: :btree
 
   create_table "lit_guides", force: :cascade do |t|
     t.string   "title"
@@ -38,17 +35,4 @@ ActiveRecord::Schema.define(version: 20180605161107) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "themes", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "book_id",     null: false
-    t.string   "image"
-  end
-
-  add_index "themes", ["book_id"], name: "index_themes_on_book_id", using: :btree
-
-  add_foreign_key "books", "authors"
-  add_foreign_key "themes", "books"
 end
