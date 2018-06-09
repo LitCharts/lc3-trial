@@ -44,10 +44,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
   gem 'faker'
+  gem 'pry-rails'
 end
 
 gem 'haml-rails'
+gem 'kaminari'
 # https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'toastr-rails', '~> 1.0.3'
