@@ -1,0 +1,22 @@
+.modal.highlight-modal.fade{ role: 'dialog', id: id }
+  .modal-dialog{ role: 'document' }
+    .modal-content
+      = form_for [(@lit_guide || highlight.lit_guide), highlight], remote: true do |f|
+        .modal-header
+          %button.close{ data: { dismiss: 'modal' } }
+            %span ×
+          %h4.modal-title
+            = f.object.persisted? ? 'Update Highlight' : 'Add New Highlight'
+        .modal-body
+          %blockquote
+            %p#highlight-quote
+              = f.object.quote
+          = f.hidden_field :quote, value: f.object.quote
+          = f.hidden_field :start_position, value: f.object.start_position
+          = f.hidden_field :end_position, value: f.object.end_position
+
+          = f.hidden_field :lit_guide_id, value: (@lit_guide || highlight.lit_guide).id
+          = f.text_area :note, class: 'form-control', placeholder: 'Add a note here..'
+        .modal-footer
+          %button.btn.btn-default{ data: { dismiss: 'modal' } } Cancel
+          = f.submit 'Save', class: 'btn btn-primary', id: 'save-btn'

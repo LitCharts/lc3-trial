@@ -1,0 +1,19 @@
+.highlight-item:last-child hr {
+  display: none;
+}
+
+.highlights-container {
+  margin-top: 25px;
+}
+
+.highlight-buttons a {
+  text-decoration: none;
+  color: #00a7f7;
+  margin-right: 5px;
+  &.last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    color: darken(#00a7f7, 20%);
+  }
+}
