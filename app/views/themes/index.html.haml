@@ -8,7 +8,8 @@
               Refine Your Search
             .sidebar__image
               = image_tag 'https://assets.litcharts.com/assets/sign-up/icons/A-plus-letter-emblem-998845222a2401b3e06baaf01b08575ddd08e9db9393531fb51c9fd12180e456.svg', class: 'a-plus-icon img-responsive', alt: "A plus letter emblem."
-          .modal.modal_access.modal_access-small.modal_open
+          .modal.modal_access.modal_access-small 
+            -# .modal_open
             .modal__content
               %button.btn.btn_close
                 +
@@ -143,40 +144,4 @@
                   Related Themes from Other Texts
                 .theme-box__subtitle
                   Themes are ordered from most to least related.
-              .card.card_theme.row
-                .col-sm-3.col-xs-3
-                  = link_to '#', class: 'card__icon theme-1-color' do
-                    = image_tag 'https://assets.litcharts.com/icons/frankenstein-ambition-and-fallibility.large.white.desktop.png', class: 'icon', alt: 'The LitCharts.com logo.'
-                .col-sm-9.col-xs-9
-                  .card__title
-                    = link_to 'Ambition and Fallibility', '#', class: 'link'
-                    in
-                    = link_to 'Frankenstein', '#', class: 'link'
-                    by
-                    = link_to 'Mary Shelly', '#', class: 'link'
-                  %p.card__description
-                    Through Victor and Walton, Frankenstein portrays human beings as deeply ambitious, and yet also deeply flawed. Both Victor and Walton dream of transforming society and bringing glory to themselves through their scientific achievements. Yet their ambitions also make them fallible.
-                  %span.ital
-                    = link_to '(read full theme analysis)', '#', class: 'link'
-            .theme-box
-              .theme-box__header
-                .theme-box__title
-                  Related Themes from Other Texts
-                .theme-box__subtitle
-                  Themes are ordered from most to least related.
-              .card.card_theme.row
-                .col-sm-3.col-xs-3
-                  = link_to '#', class: 'card__icon theme-1-color' do
-                    = image_tag 'https://assets.litcharts.com/icons/frankenstein-ambition-and-fallibility.large.white.desktop.png', class: 'icon', alt: 'The LitCharts.com logo.'
-                .col-sm-9.col-xs-9
-                  .card__title
-                    = link_to 'Ambition and Fallibility', '#', class: 'link'
-                    in
-                    = link_to 'Frankenstein', '#', class: 'link'
-                    by
-                    = link_to 'Mary Shelly', '#', class: 'link'
-                  %p.card__description
-                    Through Victor and Walton, Frankenstein portrays human beings as deeply ambitious, and yet also deeply flawed. Both Victor and Walton dream of transforming society and bringing glory to themselves through their scientific achievements. Yet their ambitions also make them fallible.
-                  %span.ital
-                    = link_to '(read full theme analysis)', '#', class: 'link'
-
+              = render @themes

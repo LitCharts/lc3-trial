@@ -1,0 +1,28 @@
+$block: '.theme-box';
+
+#{$block}{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d7d7d7;
+  &__header{
+    margin-bottom: 30px;
+     @media(max-width: 768px) {
+       margin-bottom: 20px;
+     }
+  }
+  &__title{
+    margin-bottom: 5px;
+    font-size: 2em;
+    font-weight: 600;
+    @media(max-width: 768px) {
+       font-size: 1.6em;
+     }
+  }
+  &__subtitle{
+    font-size: 1em;
+    font-weight: 400;
+  }
+  &-group{
+    position: relative;
+  }
+}

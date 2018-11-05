@@ -1,0 +1,95 @@
+$block: '.modal';
+
+#{$block}{
+   &#{$block}{
+     &_access {
+       position: absolute;
+       &.modal_open{
+         display: block;
+       }
+       #{$block}{
+         &__content{
+            display: block;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            left: 0;
+            bottom: auto;
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background: #f3f9fe;
+            border: 3px solid #1293f6;
+           @media(max-width: 992px) {
+             width: 100%;
+           }
+         }
+         &__header{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+         }
+         &__title{
+
+         }
+         &__controls{
+           margin-bottom: 25px;
+         }
+         &__footer{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+         }
+         &__image{
+           display: flex;
+           justify-content: center;
+           align-self: center;
+           margin-bottom: 10px;
+         }
+       }
+       .remark{
+         margin-bottom: 20px;
+         &.remark_small{
+           margin-bottom: 0;
+           align-self: flex-start;
+           @media(max-width: 768px) {
+             align-self: center;
+           }
+           .link{
+             @media(max-width: 768px) {
+               display: block;
+             }
+           }
+         }
+       }
+       .video-box{
+         margin: 50px 0;
+         color: #1293f6;
+         font-size: 26px;
+         text-align: center;
+         font-weight: 600;
+       }
+       &.modal_access-small{
+         #{$block}{
+            &__content{
+              max-width: 98%;
+              top: 83px;
+              padding-top: 0;
+              padding-bottom: 20px;
+            }
+           &__image{
+             margin-bottom: 0;
+             width: 130px;
+           }
+           &__controls{
+             margin-bottom: 0;
+           }
+         }
+         .remark{
+           font-size: 18px;
+         }
+       }
+     }
+   }
+}
+

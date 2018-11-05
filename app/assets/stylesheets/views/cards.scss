@@ -1,0 +1,60 @@
+$block: '.card';
+
+#{$block}{
+  &#{$block}{
+    &_theme{
+      margin-bottom: 30px;
+      #{$block}{
+        &__title{
+          margin-bottom: 20px;
+          font-size: 16px;
+          line-height: 20px;
+           @media(max-width: 992px) {
+             margin-bottom: 10px;
+           }
+        }
+        &__description{
+          padding-right: 50px;
+          font-size: 16px;
+          line-height: 1.5;
+          @media(max-width: 992px) {
+            padding-right: 0;
+            font-size: 14px;
+          }
+        }
+        &__icon{
+          height: 145px;
+          width: 140px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          max-width: 100%;
+           @media(max-width: 992px) {
+             width: 100px;
+             height: 100px;
+           }
+            @media(max-width: 768px) {
+              max-height: 140px;
+              width: 140px;
+              margin-bottom: 20px;
+           }
+           @media(max-width: 500px) {
+             height: 80px;
+           }
+          img{
+            width: 70%;
+             @media(max-width: 768px) {
+               max-width: 50%;
+             }
+          }
+          &.theme-1-color{
+            background: #ff6967;
+          }
+        }
+      }
+    }
+  }
+
+}

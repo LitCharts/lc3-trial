@@ -1,0 +1,43 @@
+$block: '.list';
+
+#{$block}{
+    padding: 0;
+  &#{$block} {
+    &_checkbox {
+        .header{
+          color: $white;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          background-clip: padding-box;
+          font-size: 18px;
+          margin-bottom: 6px;
+          margin-top: 4px;
+          padding: 2px 8px;
+          background: #9a9b9b;
+        }
+      label{
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+      .checkbox-wrapper{
+        display: flex;
+        align-items: center;
+        input[type="checkbox"]{
+          margin: 0 5px 2px 0;
+        }
+      }
+      #{$block} {
+        &__item{
+          list-style: none;
+          margin-bottom: 10px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
