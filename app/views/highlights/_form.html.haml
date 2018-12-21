@@ -1,0 +1,16 @@
+= form_for @highlight do |f|
+  - if @highlight.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@highlight.errors.count, "error")} prohibited this highlight from being saved:"
+      %ul
+        - @highlight.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :text
+    = f.text_area :text
+  .field
+    = f.label :note
+    = f.text_area :note
+  .actions
+    = f.submit 'Save'

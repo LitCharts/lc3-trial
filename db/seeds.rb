@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do
+  book = Book.create(
+    title: Faker::Book.title,
+    author: Faker::Book.author
+    )
+
+  passage = Passage.create(
+    book_id: book.id
+    content:  Faker::Lorem.paragraph
+    )
+
+  4.times do |theme|
+    passage.themes << Theme.create(name: Faker::Hipster.word)
+    passage.literary_symbols << LiterarySymbol.create(name: Faker::Science.element)
+  end
+end
