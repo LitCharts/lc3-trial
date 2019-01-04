@@ -1,5 +1,5 @@
 class PassagesController < ApplicationController
-  before_action :set_passage, only: [:show, :edit, :update, :destroy]
+  before_action :set_passage, only: [:show, :edit, :update, :destroy, :highlights]
 
   # GET /passages
   # GET /passages.json
@@ -59,6 +59,10 @@ class PassagesController < ApplicationController
       format.html { redirect_to passages_url, notice: 'Passage was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def highlights
+    render json: @passage.highlights
   end
 
   private

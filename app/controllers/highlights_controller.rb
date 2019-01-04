@@ -1,5 +1,5 @@
 class HighlightsController < ApplicationController
-  before_action :set_highlight, only: [:show, :edit, :update, :destroy]
+  before_action :set_highlight, only: [:show, :edit, :update, :destroy ]
 
   # GET /highlights
   # GET /highlights.json
@@ -7,10 +7,10 @@ class HighlightsController < ApplicationController
     @highlights = Highlight.all
   end
 
-  # # GET /highlights/1
-  # # GET /highlights/1.json
-  # def show
-  # end
+  # GET /highlights/1
+  # GET /highlights/1.json
+  def show
+  end
 
   # GET /highlights/new
   def new
@@ -32,7 +32,7 @@ class HighlightsController < ApplicationController
         format.json { render :show, status: :created, location: @highlight }
       else
         format.html { render :new }
-        format.json { render json: @highlight.errors, status: :unprocessable_entity }
+        format.json { render json: @highlight.errors, status: :unprocessable_entity, errors: @highlight.errors }
       end
     end
   end
@@ -46,7 +46,7 @@ class HighlightsController < ApplicationController
         format.json { render :show, status: :ok, location: @highlight }
       else
         format.html { render :edit }
-        format.json { render json: @highlight.errors, status: :unprocessable_entity }
+        format.json { render json: @highlight.errors, status: :unprocessable_entity, errors: @highlight.errors }
       end
     end
   end
@@ -54,11 +54,23 @@ class HighlightsController < ApplicationController
   # DELETE /highlights/1
   # DELETE /highlights/1.json
   def destroy
-    @highlight.destroy
-    respond_to do |format|
-      format.html { redirect_to highlights_url, notice: 'Highlight was successfully destroyed.' }
-      format.json { head :no_content }
+    if @highlight.destroy
+      respond_to do |format|
+        format.html { redirect_to highlights_url, notice: 'Highlight was successfully destroyed.' }
+        format.json { head :no_content, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to highlights_url, notice: 'Failed to destroy Highlight.' }
+        format.json { head :no_content, status: :internal_server_error, errors: @highlight.errors }
+      end
     end
+  end
+
+  # typically there'd be authentication and scoping highlights by user
+  def my_highlights
+    @highlights = Highlight.all
+    render :my_highlights
   end
 
   private
@@ -69,6 +81,6 @@ class HighlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def highlight_params
-      params.require(:highlight).permit(:text, :note)
+      params.require(:highlight).permit(:text, :note, :passage_id, :offset)
     end
 end

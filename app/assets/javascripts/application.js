@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require popper
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require rangy-core
+//= require rangy-cssclassapplier
+//= require rangy-highlighter
+//= require rangy-selectionsaverestore
+//= require rangy-serializer
+//= require rangy-textrange
 //= require_tree .

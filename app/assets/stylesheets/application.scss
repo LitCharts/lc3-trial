@@ -102,3 +102,24 @@ $light-text-color: lighten($text-color, 10%);
 //////////////////////////////////////////////
 
 @import "views/layouts/default";
+
+$highlighter-color: yellow;
+.highlighted, .highlight {
+  background-color: $highlighter-color;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($highlighter-color, 5%);
+  }
+}
+
+.btn {
+  background: black !important;
+}
+
+.glyphicon-pencil {
+  color: white !important;
+}
+
+.glyphicon-comment {
+  color: white !important;
+}

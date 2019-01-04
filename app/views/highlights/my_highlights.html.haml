@@ -1,0 +1,11 @@
+%h1 My Highlights
+.list-group.list-group-flush
+- if @highlights.empty?
+  No highlights yet.
+- else
+  - @highlights.each do |highlight|
+    %li.list-group-item Highlighted Text
+    %li.list-group-item.highlight-text= highlight.text
+    %li.list-group-item Highlight Note
+    %li.list-group-item.highlight-note= highlight.note.presence || "No Note Added"
+    %li.list-group-item.highlight-passage= link_to 'Go to Passage', highlight.passage

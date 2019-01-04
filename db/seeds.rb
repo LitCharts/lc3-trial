@@ -12,8 +12,8 @@
     )
 
   passage = Passage.create(
-    book_id: book.id
-    content:  Faker::Lorem.paragraph
+    book_id: book.id,
+    content:  Faker::Lorem.paragraphs
     )
 
   4.times do |theme|
